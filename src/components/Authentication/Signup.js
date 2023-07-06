@@ -1,34 +1,38 @@
-import React from 'react';
+import React,{ useContext} from 'react';
 import styled from 'styled-components';
 import google from '../images/google.png';
 import fbk from '../images/fbk.png';
 import apple from '../images/apple.png';
 import { NavLink } from 'react-router-dom';
+import textContext from '../ContextProvider';
 
-function Signup() {
-    // const [isClicked, setIsClicked] = useState(false);
-    // const signinHandler = () => {
-    //     setIsClicked(true);
-    // }
-    // props.onSave(isClicked);
+function Signup(props) {
+    const {dispatch} = useContext(textContext);
 
     return (
         <Main>
             <button className='left'>
-                <img src={google} alt='google'/>
-                 Continue with Google</button>
+                <img src={google} alt='google' />
+                Continue with Google</button>
             <button className='left'>
-                <img src={fbk} alt='fbk'/>
-                 Continue with Facebook</button>
+                <img src={fbk} alt='fbk' />
+                Continue with Facebook</button>
             <button className='left'>
-                <img src={apple}  alt='left'/>
+                <img src={apple} alt='left' />
                 Continue with Apple</button>
+            <div className='buttons'>
+                <NavLink to="/loginpage" style={{ textDecoration: 'none' }}>
+                    <button
+                    onClick={()=>{ dispatch({ type:'click'})}}
+                        className='login bb'>Login</button>
+                </NavLink>
                 <NavLink to="/signuppage">
-            <button 
-            className='signin'>Sign up with email</button>
-            </NavLink>
+                    <button
+                        className='signin bb'>Sign up with email</button>
+                </NavLink>
+            </div>
             <span>By continuing you indicate that you agree to
-Peer Stake’s Terms of Service and Privacy Policy.</span>
+                Peer Stake’s Terms of Service and Privacy Policy.</span>
         </Main>
     )
 }
@@ -66,6 +70,39 @@ button {
 button:hover {
     background-color: #f1f1f1;
 }
-
+.login {
+    display: none;
+}
+@media(max-width:480px){
+    padding: 0;
+    margin: auto;
+width: 100%;
+    .left {
+    width: 100%;
+    }
+    .login {
+        display: flex;
+        color: #7E57C2;
+    }
+    .signin {
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+    border: 1px solid white;
+    }
+.bb {
+    width: 15rem;
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    height: 3.5rem;
+}
+.buttons{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+span {display: none}
+}
 `;
-export default Signup
+export default Signup;

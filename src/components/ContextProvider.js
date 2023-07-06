@@ -26,7 +26,7 @@ export function ContextProvider(props) {
                 return state;
         }
     };
-    const [click, dispatch] = useReducer(reducer, {isClicked: false});
+    const [click, dispatch] = useReducer(reducer, false);
 
     useEffect(() => {
         const storedlog = localStorage.getItem('loggedin');
@@ -55,7 +55,7 @@ export function ContextProvider(props) {
     }
     const onLogout = () => {
         // localStorage.removeItem('loggedin', '01');
-        setLoggedin('signedout');
+        setLoggedin('loggedout');
     }
 
     return (

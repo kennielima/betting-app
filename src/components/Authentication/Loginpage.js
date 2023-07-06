@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from 'react';
 import styled from 'styled-components';
 import textContext from '../ContextProvider';
 
-function Loginpage() {
+function Loginpage(props) {
     const [evalue, setEvalue] = useState('');
     const [pvalue, setPvalue] = useState('');
     const pRef = useRef();
@@ -30,11 +30,11 @@ function Loginpage() {
             setWrongEmail(<span className='wrongEmail'>You do not have an account. Sign up now?</span>)
         }
     }
-    console.log(ctx.loggedin);
-    console.log(evalue);
 
     return (
-        <Form onSubmit={submitHandler}>
+        <Form onSubmit={submitHandler} className={ ctx.click ? "displayed": "hidden"}
+        // id={clicked && 'clicked'}
+        >
             <p>Login to Peer Stake</p>
             <label htmlFor='email'>Email</label>
             <input
@@ -78,7 +78,6 @@ input {
     height: 4rem;
     border: 1px solid #cfcfcf;
     border-radius: 3px;
-    /* background-color: white; */
     font-size: 1.5rem;
     cursor: pointer;
     color: #8a8a8a;
@@ -89,6 +88,20 @@ label{
     font-size: 1.5rem;
     text-align: left;
     font-weight: 500;
+}
+@media(max-width:480px){
+    .hidden{
+        display: none;
+    }
+
+    .displayed{
+        display: flex;
+    }
+
+/* visibility: hidden; */
+/* #clicked {
+display: flex;
+} */
 }
 `;
 const Forgot = styled.div`

@@ -8,15 +8,6 @@ import Homepage from './Homepage';
 function Stakes() {
     const {click,dispatch} = useContext(textContext);
 
-    // const [ isClicked, setIsClicked ] = useState(false);
-
-    // const clickHandler = () => {
-    //     setIsClicked(true);
-    // }
-    // const hideHandler = () => {
-    //     setIsClicked(false);
-    // }
-
     return (
         <Fragment>
             {/* {click === true && <ModalCard onClose={()=>{dispatch({type:'hide'})}} />} */}

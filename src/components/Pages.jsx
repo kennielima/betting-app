@@ -7,6 +7,7 @@ import { AnimatePresence } from 'framer-motion';
 import Home from './Home';
 import Card from './ModalCard';
 import Transactions from './Transactions';
+import Loginpage from './Authentication/Loginpage';
 
 function Pages() {
   return (
@@ -14,6 +15,7 @@ function Pages() {
     <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/signuppage' element={<Signuppage />} />
+        <Route path='/loginpage' element={<Loginpage />} />
         <Route path='/homepage' element={<Home />} />
         <Route path='/stakes' element={<Stakes />} />
         <Route path='/payment' element={<Card />} />
