@@ -65,9 +65,9 @@ display: none;
     position: absolute;
     justify-content: space-between;
     /* gap: 20rem; */
-    width: 95%;
+    width: 100%;
     /* margin: auto; */
-    padding: 1rem;
+    padding: 1rem 0;
     button {
         background-color: #7e57c2;
         color: white;
@@ -88,11 +88,12 @@ const Main = styled.header`
     visibility: hidden;
     flex-direction: column;
         background-color: rgba(123, 120, 120, 0.932);
-        padding: 1.7rem;
+        padding: 1.5rem 0;
         position: absolute;
         top: 5rem;
-        width: 90%;
+        width: 100%;
         align-items: center;
+        border-radius: 1rem;
     margin: auto;
     div {
         gap: 0.5rem;
