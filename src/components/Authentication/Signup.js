@@ -79,7 +79,7 @@ button:hover {
     }
     padding: 0;
     margin: auto;
-    margin-top: 29rem;
+    margin-top: 25rem;
     width: 85%;
     .left {
     width: 100%;
@@ -94,7 +94,7 @@ button:hover {
     border: 1px solid white;
     }
 .bb {
-    width: 15rem;
+    width: 16rem;
     border-radius: 2rem;
     justify-content: center;
     align-items: center;
