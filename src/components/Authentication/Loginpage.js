@@ -72,7 +72,7 @@ const Form = styled.form`
         width: 100%;
         margin: auto;
         position: relative;
-        bottom: -8.2rem;
+        top: 8rem;
         padding: 0 3rem;
         height: 90vh;
         grid-gap: 1.5rem;
