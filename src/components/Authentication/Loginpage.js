@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from 'react';
 import styled from 'styled-components';
 import textContext from '../ContextProvider';
 
-function Loginpage(props) {
+function Loginpage() {
     const [evalue, setEvalue] = useState('');
     const [pvalue, setPvalue] = useState('');
     const pRef = useRef();
@@ -17,14 +17,14 @@ function Loginpage(props) {
 
         if (currentValidity === true && evalue === ctx.email) {
             ctx.onLogin(evalue, pvalue);
-        } 
+        }
         else if (pvalue === "") {
             pRef.current.focus();
-        } 
+        }
         else if (!(evalue).includes('@') || evalue === "") {
             eRef.current.focus();
             setWrongEmail(<span className='wrongEmail'>input a valid email address</span>)
-        } 
+        }
         else if (currentValidity === true && evalue !== ctx.email) {
             eRef.current.focus();
             setWrongEmail(<span className='wrongEmail'>You do not have an account. Sign up now?</span>)
@@ -32,43 +32,69 @@ function Loginpage(props) {
     }
 
     return (
-        <Form onSubmit={submitHandler} className={ ctx.click ? "displayed": "hidden"}
-        // id={clicked && 'clicked'}
-        >
-            <p>Login to Peer Stake</p>
-            <label htmlFor='email'>Email</label>
-            <input
-                type='email'
-                placeholder='Your email'
-                onChange={(e) => setEvalue(e.target.value)}
-                ref={eRef}
-                value={evalue}
-            />
-            {wrongEmail}
-            <label>Password</label>
-            <input
-                type="password"
-                placeholder='Your password'
-                onChange={(e) => setPvalue(e.target.value)}
-                ref={pRef}
-                value={pvalue}
-            />
-            <Forgot>
-                <span>Forgot Password?</span>
-                <button onClick={submitHandler}>Log in</button>
-            </Forgot>
-        </Form>
+            <Form onSubmit={submitHandler} 
+            className={ctx.click2 ? "show" : undefined}
+            >
+                <p>Login to Peer Stake</p>
+                <label htmlFor='email'>Email</label>
+                <input
+                    type='email'
+                    placeholder='Your email'
+                    onChange={(e) => setEvalue(e.target.value)}
+                    ref={eRef}
+                    value={evalue}
+                />
+                {wrongEmail}
+                <label>Password</label>
+                <input
+                    type="password"
+                    placeholder='Your password'
+                    onChange={(e) => setPvalue(e.target.value)}
+                    ref={pRef}
+                    value={pvalue}
+                />
+                <Forgot>
+                    <span>Forgot Password?</span>
+                    <button onClick={submitHandler}>Log in</button>
+                </Forgot>
+            </Form>
     )
 }
+
 const Form = styled.form`
+@media(max-width:480px){
+    background-color: white;
+    border-radius: 2rem;
+        display: none;
+    &.show{ 
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        position: relative;
+        bottom: -8.2rem;
+        padding: 0 3rem;
+        height: 90vh;
+        grid-gap: 1.5rem;
+        margin-bottom: 0;
+    }
+        p {
+            color: #7E57C2;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 1rem;
+        }
+        input { width: 25rem;}
+    
+}
+display: grid;
+width: 45%;
+padding: 0 3rem;
 .wrongEmail {
     color: red;
     text-align: left;
     font-size: 1.1rem;
 }
-display: grid;
-width: 45%;
-padding: 0 3rem;
 p {
     font-size: 1.5rem;
     text-align: left;
@@ -89,22 +115,18 @@ label{
     text-align: left;
     font-weight: 500;
 }
-@media(max-width:480px){
-    .hidden{
-        display: none;
-    }
 
-    .displayed{
-        display: flex;
-    }
-
-/* visibility: hidden; */
-/* #clicked {
-display: flex;
-} */
-}
 `;
 const Forgot = styled.div`
+@media(max-width:480px){
+display: flex;
+flex-direction: column-reverse;
+margin: 3rem 0;
+gap: 1rem;
+button {
+    width: 100%;
+}
+}
 height: 4rem;
 display: flex;
 justify-content: space-between;

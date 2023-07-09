@@ -87,6 +87,9 @@ height: auto;
 width: 75rem;
 padding: 0rem 0.6rem;
 border-radius: 1rem;
+@media(max-width:480px){
+width: auto;
+}
 li {
 display: flex;
 align-items: center;
@@ -102,6 +105,9 @@ height: 1rem;
 width: 1rem;
 padding: 0.9rem;
 margin: 1.3rem 3rem 0rem 1.2rem; 
+@media(max-width:480px){
+    margin: 0.3rem 0.8rem 0.3rem 0.3rem;
+}
 }
 .red {
     background-color: #f7bcbb;
@@ -121,6 +127,9 @@ display: grid;
 width: 80%;
 text-align: start;
 grid-gap: 0rem;
+@media(max-width:480px){
+        width: 75%;
+    }
 }
 p {
 font-size: 1.4rem;
@@ -147,7 +156,9 @@ justify-content: space-between;
 color: #4D2B90;
 margin: -0.2rem;
 align-items: center;
-
+@media(max-width:480px){
+    padding: 0rem 1.5rem;
+}
 button {
 color: #4D2B90;
 border: 1px solid grey;
@@ -165,9 +176,15 @@ button:hover{
 `;
 const Main = styled.div`
 padding: 2.2rem 4rem;
+@media(max-width:480px){
+    padding: 1rem 0rem;
+}
 `;
 const Buttons = styled.div`
 margin-left: 40rem;
+@media(max-width:480px){
+margin: auto;
+}
 span {
     color: white;
     border: 1px solid white;
@@ -184,6 +201,10 @@ button {
     color: white;
     margin: 0.5rem;
     width: 17rem;
+    @media(max-width:480px){
+width: 14rem;
+padding: 1rem;
+}
 }
 button:hover{
     background-color: white;

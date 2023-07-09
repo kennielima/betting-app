@@ -42,9 +42,9 @@ function Stakes() {
                 </Form>
                 <p>Stake With</p>
                 <Buttons>
-                        <Button onClick={()=>{dispatch({type:'click'})}}>Wallet</Button>
-                        <Button onClick={()=>{dispatch({type:'click'})}}>Card</Button>
-                    <Button>Bitcoin</Button>
+                        <Button className='btns' onClick={()=>{dispatch({type:'click'})}}>Wallet</Button>
+                        <Button className='btns' onClick={()=>{dispatch({type:'click'})}}>Card</Button>
+                    <Button className='btns'>Bitcoin</Button>
                 </Buttons>
             </Main>
         </Homepage>
@@ -56,6 +56,15 @@ const Buttons = styled.div`
 display: flex;
 gap: 1.5rem;
 justify-content: center;
+@media(max-width:480px){
+gap: 0.5rem;
+    button{
+        padding: 1rem 0rem;
+    }
+.btns {
+width: 10rem;
+}
+    }
 button {
 width: 15rem;
 }
@@ -83,6 +92,10 @@ width: 75rem;
 padding: 2rem;
 border-radius: 1rem;
 grid-gap: 1rem;
+@media(max-width:480px){
+width: 80%;
+margin: auto;
+}
 div {
 display: flex;
 justify-content: space-between;
@@ -113,6 +126,11 @@ input {
 ;`
 const Main = styled.div`
 margin: 1rem 4rem;
+@media(max-width:480px){
+margin: 1rem;
+padding: 1rem 0;
+width: auto;
+}
 h2 {
     color: #4D2B90;
     text-align: start;

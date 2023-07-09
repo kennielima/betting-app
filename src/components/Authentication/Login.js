@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import textContext from '../ContextProvider';
 import downloader from '../images/downloader.png';
@@ -12,13 +12,13 @@ import Home from '../Home';
 
 function Login() {
     const ctx = useContext(textContext);
-
+    console.log(ctx.click2)
     return (
         <motion.div
-        animate={{opacity: 1}}
-        initial={{opacity: 0}}
-        exit={{opacity: 0}}
-        transition={{ duration: 0.5 }}
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
         >
             {ctx.loggedin !== 'loggedin' &&
                 <Main>

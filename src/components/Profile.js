@@ -28,6 +28,14 @@ background-color: #7E57C2;
 color: white;
 padding: 6rem;
 width: 20%;
+@media(max-width:480px){
+width: 100vw;
+padding: 3rem 0 3rem 0;
+border-radius: 0 0 3rem 3rem;
+h1 {
+    margin: 0;
+}
+}
 .user {
     border-radius: 50%;
 background-color: white;
@@ -47,6 +55,10 @@ font-size: 1.2rem;
     top: 5.7rem;
     z-index: 0;
     height: 15rem;
+    @media(max-width:480px){
+        left: 0rem;
+    top: 5.7rem;
+    }
 }
 .vectordols {
     position: absolute;
@@ -56,6 +68,10 @@ font-size: 1.2rem;
     height: 9rem;
     opacity: 40%;
     color: white;
+    @media(max-width:480px){
+        left: 27rem;
+    top: 30rem;
+    }
 }
 button {
 background-color: white;

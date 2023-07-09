@@ -31,6 +31,10 @@ span {
 img{
     padding-left: 10rem;
     height: 15vh;
+@media(max-width:480px){
+    height: 8vh;
+    padding-left: 13.5rem;
+}
 }
 `;
 export default Footer;

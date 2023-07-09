@@ -9,24 +9,31 @@ export function ContextProvider(props) {
     const [email, setEmail] = useState('');
     const [fname, setFname] = useState('');
 
-    // const clickHandler = () => {
-    //     setIsClicked(true);
-    // }
-    // const hideHandler = () => {
-    //     setIsClicked(false);
-    // }
-
     const reducer = (state, action) => {
         switch (action.type) {
             case 'click':
                 return true;
             case 'hide':
                 return false;
+                case 'clicked':
+                    return null;
             default:
                 return state;
         }
     };
     const [click, dispatch] = useReducer(reducer, false);
+
+    const reducer2 = (state, action) => {
+        switch (action.type) {
+            case 'clicked':
+                return true;
+            case 'hidden':
+                return false;
+            default:
+                return state;
+        }
+    };
+    const [click2, dispatch2] = useReducer(reducer2, false);
 
     useEffect(() => {
         const storedlog = localStorage.getItem('loggedin');
@@ -63,7 +70,8 @@ export function ContextProvider(props) {
             loggedin,
             onLogin, onLogout, onSignin,
             email, fname,
-            click, dispatch
+            click, dispatch,
+            click2, dispatch2
         }}>
             {props.children}
         </textContext.Provider>

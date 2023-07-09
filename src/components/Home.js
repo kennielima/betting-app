@@ -43,7 +43,14 @@ const Body = styled.div`
 display: flex;
 flex-direction: column;
 margin: 8rem;
-grid-gap: 3rem;
+grid-gap: 0.1rem;
+@media(max-width:480px){
+width: 80%;
+/* margin: 2rem 1.5rem; */
+margin: auto;
+padding: 2rem 0;
+/* justify-content: center; */
+}
 h2 {
     color: #4D2B90;
     text-align: start;
@@ -63,6 +70,9 @@ h2 {
 const Cards = styled.div`
 display: flex;
 gap: 4rem;
+@media(max-width:480px){
+    gap: 2rem;
+}
 `;
 const Card = styled.div`
 display: flex;
@@ -72,6 +82,9 @@ height: 100%;
 width: 6rem;
 gap: 0;
 padding: 1.2rem 4rem;
+@media(max-width:480px){
+padding: 0.9rem 2rem;
+}
 
 h1 {
     font-size: 5rem;
@@ -84,7 +97,9 @@ margin-top: 4rem;
 text-align: start;
 display: flex;
 gap: 3rem;
-
+@media(max-width:480px){
+    gap: 1.5rem;
+}
 button {
    padding: 1.7rem 5rem;
    border:  1px solid purple;
@@ -92,6 +107,9 @@ button {
    cursor: pointer;
     background-color: #4D2B90;
     color: white;
+    @media(max-width:480px){
+    padding: 1.2rem 1rem;
+}
 }
 button:hover{
     background-color: white;

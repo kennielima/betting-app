@@ -10,7 +10,7 @@ import discover from './images/discover.png';
 function ModalCard(props) {
     const submitHandler = (e) => {
         e.preventDefault();
-        
+
     }
     return (
         <Modal onClose={props.onClose} >
@@ -75,8 +75,8 @@ function ModalCard(props) {
                         </div>
                     </Flex>
                     <Check>
-                    <label>Save this Card</label>
-                    <input type="checkbox" />
+                        <label>Save this Card</label>
+                        <input type="checkbox" />
                     </Check>
                     <Button> Pay $100 </Button>
                 </Form>
@@ -101,6 +101,11 @@ const Button = styled.button`
 const Form = styled.form`
 display: grid;
 grid-gap: 1rem;
+@media(max-width:480px){
+/* input{
+    width: 40%;
+}; */
+}
 input {
 border-radius: 0.5rem;
 border: 1px solid #E5E5E5;
@@ -118,8 +123,10 @@ padding-left: 1rem;
 const Flex = styled.div`
     display: flex;
     justify-content: space-between;
-    /* gap: 1rem; */
     align-items: center;
+    @media(max-width:480px){
+        justify-content: normal;
+    }
     div {
     display: grid;
     align-items: center;
@@ -127,6 +134,9 @@ const Flex = styled.div`
     }
     input {
         width: 32rem;
+    @media(max-width:480px){
+    width: 90%;
+};
     }
 `;
 const Main = styled.div`
@@ -134,10 +144,15 @@ display: grid;
 grid-gap: 1.2rem;
 padding: 2rem;
 width: auto;
+@media(max-width:480px){
+padding: 0;
+}
 h3 {
 display: flex;
 justify-content: center;
-/* padding: 1rem; */
+@media(max-width:480px){
+    justify-content: left;
+}
 }
 `;
 const Logo = styled.div`
@@ -157,9 +172,11 @@ justify-content: center;
 const Line = styled.div`
 color: grey;
 display: flex;
-/* padding: 1.3rem 0; */
 hr{
     width: 39%;
+    @media(max-width:480px){
+        width: 30%;
+    }
 }
 `;
 const Pay = styled.div`

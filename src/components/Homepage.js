@@ -26,6 +26,11 @@ display: flex;
 margin: 0 12rem;
 background-color: #f2f2f2;
 height: auto;
+@media(max-width:480px){
+margin: 0;
+display: grid;
+width: 100vw;
+}
 `;
 
 export default Homepage;

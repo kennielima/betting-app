@@ -43,9 +43,11 @@ const Ol = styled.div`
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 13;
     animation: slide-down 300ms ease-out forwards;
-  @media (min-width: 768px) {
-      /* width: 40rem; */
-      left: calc(50% - 20rem);
+  @media (max-width: 480px) {
+      width: 80%;
+      /* margin: auto; */
+      /* left: 8rem; */
+      left: calc(50% - 10rem);
   }
     `;
 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import textContext from '../ContextProvider';
 import downloader from '../images/downloader.png';
+import peerstake from '../images/peerstake.png';
 
 function Signuppage() {
     const [evalue, setEvalue] = useState('');
@@ -29,6 +30,7 @@ function Signuppage() {
     }
     return (
         <Main>
+            <img id='ps' src={peerstake} alt="peerstake" />
             <Main2>
                 <h2>Sign up</h2>
                 <Form onSubmit={submitHandler}>
@@ -103,10 +105,10 @@ function Signuppage() {
                     </Divs>
                     <TnCs id="six">
                         <div>
-                            <input 
-                            type="checkbox" 
-                            checked={isChecked} 
-                            onChange={(e)=> setIsChecked(e.target.checked)}
+                            <input
+                                type="checkbox"
+                                checked={isChecked}
+                                onChange={(e) => setIsChecked(e.target.checked)}
                             />
                             <span className={!isChecked ? 'unchecked' : ''}>Please confirm to our Terms and Conditions.</span>
                         </div>
@@ -124,6 +126,19 @@ height: 100vh;
 background-repeat: no-repeat;
 background-size: cover;
 display: grid;
+#ps {
+    display: none;
+}
+@media(max-width:480px){
+background-color: #4D2B90;
+background-image: none;
+    #ps {
+    display: flex;
+    margin-left: 2rem;
+    position: absolute;
+    top: 2rem;
+}
+}
 `;
 const Main2 = styled.div`
 background-color: #E6E6E6;
@@ -133,12 +148,40 @@ margin: auto;
 padding-top: 3rem;
 border-radius: 3px;
 border: 2rem solid grey;
+@media(max-width:480px){
+background-color: white;
+border: none;
+border-radius: 2rem;
+width: 100%;
+height: 85%;
+margin-bottom: 0;
+h2 {
+    font-size: 1.6rem;
+    color: #7E57C2;
+}
+}
 `;
 const Form = styled.form`
 display: grid;
 grid-template-columns: auto auto auto;
 grid-gap: 3rem;
 margin: 3rem;
+
+@media(max-width:480px){
+display: block;
+gap: 1rem;
+input,select {
+    margin-bottom: 1rem;
+}
+#six {
+    display: flex;
+    flex-direction: column-reverse;
+}
+div, button {
+    width: 100%;
+    margin: auto;
+}
+}
 input {
     height: 3.2rem;
     border: 1px solid #cfcfcf;

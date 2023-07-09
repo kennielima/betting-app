@@ -6,11 +6,18 @@ import apple from '../images/apple.png';
 import { NavLink } from 'react-router-dom';
 import textContext from '../ContextProvider';
 
-function Signup(props) {
-    const {dispatch} = useContext(textContext);
+function Signup() {
+    const { click2, dispatch2 } = useContext(textContext);
+
+    // const clickHandler = ()=> {
+    //     // window.matchMedia("(max-width: 480px)").matches && 
+    //     dispatch2({ type:'clicked'})
+    //     }
 
     return (
-        <Main>
+        <Main 
+        className={click2 ? 'hide' : ""}
+        >
             <button className='left'>
                 <img src={google} alt='google' />
                 Continue with Google</button>
@@ -21,11 +28,9 @@ function Signup(props) {
                 <img src={apple} alt='left' />
                 Continue with Apple</button>
             <div className='buttons'>
-                <NavLink to="/loginpage" style={{ textDecoration: 'none' }}>
                     <button
-                    onClick={()=>{ dispatch({ type:'click'})}}
+                    onClick={()=>{ dispatch2({ type:'clicked'})}}
                         className='login bb'>Login</button>
-                </NavLink>
                 <NavLink to="/signuppage">
                     <button
                         className='signin bb'>Sign up with email</button>
@@ -74,9 +79,12 @@ button:hover {
     display: none;
 }
 @media(max-width:480px){
+    &.hide {
+        display: none;
+    }
     padding: 0;
     margin: auto;
-width: 100%;
+    width: 100%;
     .left {
     width: 100%;
     }
