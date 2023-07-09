@@ -65,8 +65,9 @@ display: none;
     position: absolute;
     justify-content: space-between;
     /* gap: 20rem; */
-    width: 90%;
-    padding: 1rem 2rem;
+    width: 95%;
+    /* margin: auto; */
+    padding: 1rem ;
     button {
         background-color: #7e57c2;
         color: white;
