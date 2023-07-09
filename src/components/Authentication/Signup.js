@@ -79,7 +79,8 @@ button:hover {
     }
     padding: 0;
     margin: auto;
-    width: 100%;
+    margin-top: 29rem;
+    width: 85%;
     .left {
     width: 100%;
     }

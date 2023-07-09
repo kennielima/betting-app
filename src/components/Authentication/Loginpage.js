@@ -70,13 +70,13 @@ const Form = styled.form`
         display: flex;
         flex-direction: column;
         width: 100%;
-        margin: auto;
-        position: relative;
-        top: 8rem;
+        margin: 6rem 0 0 0;
+        /* position: relative;
+        top: 8rem; */
+        /* bottom: 0; */
         padding: 0 3rem;
-        height: 80vh;
+        height: 90vh;
         grid-gap: 1.5rem;
-        margin-bottom: 0;
     }
         p {
             color: #7E57C2;
@@ -84,7 +84,7 @@ const Form = styled.form`
             margin-right: auto;
             padding-top: 1rem;
         }
-        input { width: 25rem;}
+        input { width: 95%;}
     
 }
 display: grid;
