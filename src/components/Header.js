@@ -67,7 +67,7 @@ display: none;
     /* gap: 20rem; */
     width: 95%;
     /* margin: auto; */
-    padding: 1rem ;
+    padding: 1rem;
     button {
         background-color: #7e57c2;
         color: white;
