@@ -9,11 +9,6 @@ import textContext from '../ContextProvider';
 function Signup() {
     const { click2, dispatch2 } = useContext(textContext);
 
-    // const clickHandler = ()=> {
-    //     // window.matchMedia("(max-width: 480px)").matches && 
-    //     dispatch2({ type:'clicked'})
-    //     }
-
     return (
         <Main 
         className={click2 ? 'hide' : ""}

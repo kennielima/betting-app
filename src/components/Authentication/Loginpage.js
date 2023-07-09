@@ -74,7 +74,7 @@ const Form = styled.form`
         position: relative;
         top: 8rem;
         padding: 0 3rem;
-        height: 90vh;
+        height: 80vh;
         grid-gap: 1.5rem;
         margin-bottom: 0;
     }

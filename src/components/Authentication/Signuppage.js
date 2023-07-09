@@ -23,6 +23,7 @@ function Signuppage() {
         if (currentValidity === true && isChecked === true) {
             ctx.onSignin(fvalue, evalue);
             navigate('/');
+            ctx.dispatch2({ type:'clicked'});
         } else {
             inputRef.current.focus();
         }
