@@ -82,7 +82,7 @@ display: flex;
 @media(max-width: 480px){
     /* position: absolute;
 bottom: 8%; */
-padding: 2rem 0;
+padding: 0 0 3rem 0;
 }
 `;
 const Footer = styled.footer`
@@ -97,6 +97,7 @@ cursor: pointer;
 @media(max-width: 480px){
 background-color: rgba(0, 0, 0, 0);
 position: absolute;
+padding-top: 2rem;
 bottom: 0;
  left: 48%;
  transform: translate(-50%, -50%);
