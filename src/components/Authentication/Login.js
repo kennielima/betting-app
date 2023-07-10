@@ -82,7 +82,7 @@ display: flex;
 @media(max-width: 480px){
     /* position: absolute;
 bottom: 8%; */
-padding: 0;
+padding: 2rem 0;
 }
 `;
 const Footer = styled.footer`
