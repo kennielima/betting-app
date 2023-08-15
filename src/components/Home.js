@@ -93,13 +93,11 @@ h1 {
 }
 `;
 const Buttons = styled.div`
-margin-top: 4rem;
+margin: 4rem 2rem 0 2rem;
 text-align: start;
 display: flex;
-gap: 3rem;
-@media(max-width:480px){
-    gap: 1.5rem;
-}
+justify-content:space-between;
+
 button {
    padding: 1.7rem 5rem;
    border:  1px solid purple;

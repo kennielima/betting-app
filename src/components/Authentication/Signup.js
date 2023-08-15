@@ -1,4 +1,4 @@
-import React,{ useContext} from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import google from '../images/google.png';
 import fbk from '../images/fbk.png';
@@ -8,27 +8,29 @@ import textContext from '../ContextProvider';
 
 function Signup() {
     const { click2, dispatch2 } = useContext(textContext);
+    const [ dummy, setDummy ] = useState(false);
 
     return (
-        <Main 
-        className={click2 ? 'hide' : ""}
+        <Main
+            className={click2 ? 'hide' : ""}
         >
-            <button className='left'>
+            <button className='left' onClick={()=>setDummy(true)}>
                 <img src={google} alt='google' />
                 Continue with Google</button>
-            <button className='left'>
+            <button className='left' onClick={()=>setDummy(true)}>
                 <img src={fbk} alt='fbk' />
                 Continue with Facebook</button>
-            <button className='left'>
+            <button className='left' onClick={()=>setDummy(true)}>
                 <img src={apple} alt='left' />
                 Continue with Apple</button>
             <div className='buttons'>
-                    <button
-                    onClick={()=>{ dispatch2({ type:'clicked'})}}
-                        className='login bb'>Login</button>
-                <NavLink to="/signuppage">
+                <button
+                    onClick={() => { dispatch2({ type: 'clicked' }) }}
+                    className='login bb'>Login</button>
+                <NavLink to="/signuppage" style={{textDecoration:'none' }}>
                     <button
                         className='signin bb'>Sign up with email</button>
+                {dummy && <p style={{color:'red' }}>Please create an account</p>}
                 </NavLink>
             </div>
             <span>By continuing you indicate that you agree to
@@ -67,8 +69,12 @@ button {
     display: flex;
     align-items: center;
 }
-button:hover {
-    background-color: #f1f1f1;
+.signin {
+    background-color: RGB(112 69 198);
+    color: white;
+}
+.signin:hover {
+    background-color: #4D2B90;
 }
 .login {
     display: none;
@@ -86,10 +92,11 @@ button:hover {
     }
     .login {
         display: flex;
-        color: #7E57C2;
+        background-color: #4D2B90;
+        color: white;
     }
     .signin {
-        background-color: rgba(0, 0, 0, 0);
+        background-color: #4D2B90;
         color: white;
     border: 1px solid white;
     }
@@ -104,7 +111,7 @@ button:hover {
 .buttons{
     margin-top: 1rem;
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
 }
 span {display: none}
 }

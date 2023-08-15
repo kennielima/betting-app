@@ -36,7 +36,7 @@ function Signuppage() {
                 <h2>Sign up</h2>
                 <Form onSubmit={submitHandler}>
                     <Divs id="one">
-                        <label htmlFor='name'>First Name</label>
+                        <label htmlFor='name'><span style={{color:'red',fontSize:'1.2rem'}}>*</span>First Name</label>
                         <input
                             type="name"
                             placeholder="First Name"
@@ -46,7 +46,7 @@ function Signuppage() {
                         />
                     </Divs>
                     <Divs id="two">
-                        <label htmlFor='name'>Last Name</label>
+                        <label htmlFor='name'><span style={{color:'red',fontSize:'1.2rem'}}>*</span>Last Name</label>
                         <input
                             type="name"
                             placeholder="Last Name"
@@ -56,7 +56,7 @@ function Signuppage() {
                         />
                     </Divs>
                     <Divs id="three">
-                        <label htmlFor='email'>Email</label>
+                        <label htmlFor='email'><span style={{color:'red',fontSize:'1.2rem'}}>*</span>Email</label>
                         <input
                             type="email"
                             placeholder="Your Email"
@@ -106,6 +106,7 @@ function Signuppage() {
                     </Divs>
                     <TnCs id="six">
                         <div>
+                        <span style={{color:'red',fontSize:'1.2rem'}}>*</span>
                             <input
                                 type="checkbox"
                                 checked={isChecked}

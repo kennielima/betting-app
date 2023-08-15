@@ -51,6 +51,7 @@ function Loginpage() {
                     placeholder='Your password'
                     onChange={(e) => setPvalue(e.target.value)}
                     ref={pRef}
+                    name='name'
                     value={pvalue}
                 />
                 <Forgot>

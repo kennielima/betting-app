@@ -98,6 +98,7 @@ cursor: pointer;
 background-color: rgba(0, 0, 0, 0);
 position: absolute;
 padding-top: 2rem;
+padding-bottom: 0;
 bottom: 0;
  left: 48%;
  transform: translate(-50%, -50%);
