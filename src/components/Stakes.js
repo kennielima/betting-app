@@ -1,4 +1,4 @@
-import React, {Fragment, useContext} from 'react';
+import React, { Fragment, useContext } from 'react';
 import styled from 'styled-components';
 import ModalCard from './ModalCard';
 import textContext from './ContextProvider';
@@ -6,48 +6,53 @@ import Homepage from './Homepage';
 // import { CLICK } from './constants';
 
 function Stakes() {
-    const {click,dispatch} = useContext(textContext);
+    const { click, dispatch } = useContext(textContext);
 
     return (
         <Fragment>
             {/* {click === true && <ModalCard onClose={()=>{dispatch({type:'hide'})}} />} */}
-        <Homepage>
-            <Main>
-                <h2>Stakes</h2>
-                <Form>
-                    <div>
-                        <label>I want to stake</label>
-                        <label id='add'><span>+</span> Add user</label>
-                    </div>
-                    <input
-                        type="text"
-                        placeholder='$100' />
-                    <label>With</label>
-                    <input
-                        type="text"
-                        placeholder='I @Jide will win @username/email' />
-                    <label>That</label>
-                    <input
-                        type="text"
-                        placeholder='A 3 set FIFA 22 game' />
-                    <label>On</label>
-                    <input
-                        type="text"
-                        placeholder='Date/Time' />
-                    <label>Decider for dispute resoluion</label>
-                    <input
-                        type="text"
-                        placeholder='Picture of the score board' />
-                    <Button>Share</Button>
-                </Form>
-                <p>Stake With</p>
-                <Buttons>
-                        <Button className='btns' onClick={()=>{dispatch({type:'click'})}}>Wallet</Button>
-                        <Button className='btns' onClick={()=>{dispatch({type:'click'})}}>Card</Button>
-                    <Button className='btns'>Bitcoin</Button>
-                </Buttons>
-            </Main>
-        </Homepage>
+            <Homepage>
+                <Main>
+                    <h2>Stakes</h2>
+                    <Form>
+                        <div>
+                            <label>I want to stake</label>
+                            <label id='add'><span>+</span> Add user</label>
+                        </div>
+                        <input
+                            type="text"
+                            placeholder='$100' />
+                        <label>With</label>
+                        <input
+                            type="text"
+                            placeholder='I @Jide will win @username/email' />
+                        <label>That</label>
+                        <input
+                            type="text"
+                            placeholder='A 3 set FIFA 22 game' />
+                        <label>On</label>
+                        <input
+                            type="text"
+                            placeholder='Date/Time' />
+                        <label>Decider for dispute resoluion</label>
+                        <input
+                            type="text"
+                            placeholder='Picture of the score board' />
+                        <Button>Share</Button>
+                    </Form>
+                    <p>Stake With</p>
+                    <Buttons>
+                        <a href='https://buy.stripe.com/test_6oE2bU8eVeh49FKdQR'>
+                            <Button className='btns'>Stripe</Button>
+                        </a>
+                        <Button className='btns' onClick={() => { dispatch({ type: 'click' }) }}>Apple Pay</Button>
+                        <a href='https://wallet-faw.vercel.app/wallet'>
+                            <Button className='btns'>Wallet</Button>
+                        </a>
+
+                    </Buttons>
+                </Main>
+            </Homepage>
         </Fragment>
     )
 }

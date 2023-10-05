@@ -69,7 +69,7 @@ font-size: 1.2rem;
     opacity: 40%;
     color: white;
     @media(max-width:480px){
-        left: 27rem;
+        left: 23rem;
     top: 30rem;
     }
 }

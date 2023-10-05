@@ -112,7 +112,7 @@ function Signuppage() {
                                 checked={isChecked}
                                 onChange={(e) => setIsChecked(e.target.checked)}
                             />
-                            <span className={!isChecked ? 'unchecked' : ''}>Please confirm to our Terms and Conditions.</span>
+                            <span className={!isChecked ? 'unchecked' : ''}>Please accept our Terms and Conditions.</span>
                         </div>
                         <button onSubmit={submitHandler}>Signup</button>
                     </TnCs>

@@ -1,4 +1,4 @@
-import React, { Fragment,useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Homepage from './Homepage';
@@ -6,36 +6,38 @@ import textContext from './ContextProvider';
 import ModalCard from './ModalCard';
 
 function Home() {
-    const { click, dispatch } = useContext(textContext);
+    // const { click, dispatch } = useContext(textContext);
 
     return (
         <Fragment>
-        {/* {click === true && <ModalCard onClose={()=>{dispatch({type:'hide'})}} />} */}
-        <Homepage>
-            <Body>
-                <h2>Stakes</h2>
-                <Cards>
-                    <Card id="one">
-                        <h1>5</h1>
-                        <span>Running</span>
-                    </Card>
-                    <Card id="two">
-                        <h1>2</h1>
-                        <span>Request</span>
-                    </Card>
-                    <Card id="three">
-                        <h1>1</h1>
-                        <span>Due</span>
-                    </Card>
-                </Cards>
-                <Buttons>
-                        <button onClick={()=>{dispatch({type:'click'})}}><span>+</span> Fund your wallet</button>
-                    <NavLink to='/transaction'>
-                        <button>View Transactions</button>
-                    </NavLink>
-                </Buttons>
-            </Body>
-        </Homepage>
+            {/* {click === true && <ModalCard onClose={()=>{dispatch({type:'hide'})}} />} */}
+            <Homepage>
+                <Body>
+                    <h2>Stakes</h2>
+                    <Cards>
+                        <Card id="one">
+                            <h1>5</h1>
+                            <span>Running</span>
+                        </Card>
+                        <Card id="two">
+                            <h1>2</h1>
+                            <span>Request</span>
+                        </Card>
+                        <Card id="three">
+                            <h1>1</h1>
+                            <span>Due</span>
+                        </Card>
+                    </Cards>
+                    <Buttons>
+                        <a href='https://buy.stripe.com/test_6oE2bU8eVeh49FKdQR'>
+                            <button><span>+</span> Fund your wallet</button>
+                        </a>
+                        <NavLink to='/transaction'>
+                            <button>View Transactions</button>
+                        </NavLink>
+                    </Buttons>
+                </Body>
+            </Homepage>
         </Fragment>
     )
 }

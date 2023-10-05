@@ -28,17 +28,13 @@ function Header() {
                     <NavLinks to='/'>
                         <span onClick={()=>setToggle(false)}>Home</span>
                     </NavLinks>
-                    <span onClick={()=>setToggle(false)}>About</span>
                     <NavLinks to='/stakes'>
                         <span onClick={()=>setToggle(false)}>Stakes</span>
                     </NavLinks>
-                    <span
-                        onClick={dispatchModal}
-                    >Wallet</span>
+                    <span onClick={dispatchModal}>Wallet</span>
                     <NavLinks to='/transaction'>
                         <span onClick={()=>setToggle(false)}>Transactions</span>
                     </NavLinks>
-                    <span onClick={()=>setToggle(false)}>Contact Us</span>
                 </div>
                 <div>
                     <img className='user' src={user} alt="user" />
@@ -68,7 +64,7 @@ display: none;
     width: 100%;
     /* margin: auto; */
     padding: 1rem 0;
-    button {
+button {
         background-color: #7e57c2;
         color: white;
         border: none;
@@ -96,7 +92,7 @@ const Main = styled.header`
         border-radius: 1rem;
     margin: auto;
     div {
-        gap: 0.5rem;
+        gap: 2rem;
         flex-direction: column;
         color: white;
     }
@@ -149,10 +145,11 @@ button {
     cursor: pointer;
 @media(max-width:480px){
 margin: auto;
+margin-top: 2.5rem;
 }
 }
 button:hover {
-    background - color: #4D2B90;
+    background-color: #4D2B90;
     transition: all 0.3s;
 }
 `;
