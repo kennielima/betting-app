@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, useState } from 'react'
 import logo from './images/logo.png';
-import user from './images/user.png';
+import user from './images/anons.png';
 import styled from 'styled-components';
 import textContext from './ContextProvider';
 import { NavLink } from 'react-router-dom';
@@ -8,7 +8,7 @@ import ModalCard from './ModalCard';
 import peerstake from './images/peerstake.png';
 
 function Header() {
-    const { fname, onLogout, click, dispatch } = useContext(textContext);
+    const { fname, onLogout, click, dispatch, img } = useContext(textContext);
     const [toggle, setToggle] = useState(false);
 
     const HandleToggle = () => {
@@ -18,6 +18,12 @@ function Header() {
         dispatch({ type: 'click' })
         setToggle(false);
     }
+    const closeModal = () => {
+        dispatch({ type: 'hide' })
+        setToggle(false);
+    }
+
+    const image = img ? img : user;
 
     return (
         <Fragment>
@@ -26,18 +32,18 @@ function Header() {
                 <img className='logo' src={logo} alt="logo" />
                 <div>
                     <NavLinks to='/'>
-                        <span onClick={()=>setToggle(false)}>Home</span>
+                        <span onClick={closeModal}>Home</span>
                     </NavLinks>
                     <NavLinks to='/stakes'>
-                        <span onClick={()=>setToggle(false)}>Stakes</span>
+                        <span onClick={closeModal}>Stakes</span>
                     </NavLinks>
                     <span onClick={dispatchModal}>Wallet</span>
                     <NavLinks to='/transaction'>
-                        <span onClick={()=>setToggle(false)}>Transactions</span>
+                        <span onClick={closeModal}>Transactions</span>
                     </NavLinks>
                 </div>
                 <div>
-                    <img className='user' src={user} alt="user" />
+                    <img className='user' src={image} alt="user" />
                     <p>@{fname}</p>
                     <NavLink to='/'>
                         <button
@@ -92,7 +98,7 @@ const Main = styled.header`
         border-radius: 1rem;
     margin: auto;
     div {
-        gap: 2rem;
+        gap: 4rem;
         flex-direction: column;
         color: white;
     }

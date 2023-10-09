@@ -1,5 +1,5 @@
-import React,{ useContext } from 'react';
-import user from './images/user.png';
+import React, { useContext } from 'react';
+import user from './images/anons.png';
 import styled from 'styled-components';
 import Peericon from './images/Peericon.png';
 import vectordols from './images/vectordols.png';
@@ -7,21 +7,24 @@ import textContext from './ContextProvider';
 import { NavLink } from 'react-router-dom';
 
 function Profile() {
-    const { fname } = useContext(textContext);
+    const { fname, img } = useContext(textContext);
+    console.log(img);
 
-  return (
-    <Main>
-        <img className="vector" src={Peericon} alt="Peericon" />
-        <p className="welcome" >{fname.toUpperCase()}</p>
-        <img className="user" src={user} alt="user" />
-        <h1>$0.00</h1>
-        <p id='wallet'>WALLET BALANCE</p>
-        <NavLink to='/stakes'>
-        <button>CREATE STAKE</button>
-        </NavLink>
-        <img className="vectordols" src={vectordols} alt="vectordols" />
-    </Main>
-  )
+    const image = img ? img : user;
+
+    return (
+        <Main>
+            <img className="vector" src={Peericon} alt="Peericon" />
+            <p className="welcome" >{fname.toUpperCase()}</p>
+            <img className="user" src={image} alt="user" height={153} width={155} />
+            <h1>$0.00</h1>
+            <p id='wallet'>WALLET BALANCE</p>
+            <NavLink to='/stakes'>
+                <button>CREATE STAKE</button>
+            </NavLink>
+            <img className="vectordols" src={vectordols} alt="vectordols" />
+        </Main>
+    )
 }
 const Main = styled.div`
 background-color: #7E57C2;

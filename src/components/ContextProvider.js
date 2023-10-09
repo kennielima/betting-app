@@ -8,6 +8,7 @@ export function ContextProvider(props) {
     const [loggedin, setLoggedin] = useState('');
     const [email, setEmail] = useState('');
     const [fname, setFname] = useState('');
+    const [img, setImg] = useState();
 
     const reducer = (state, action) => {
         switch (action.type) {
@@ -51,14 +52,15 @@ export function ContextProvider(props) {
         localStorage.setItem('loggedin', 'true');
         setLoggedin('loggedin');
     }
-    const onSignin = (fname, email) => {
+    const onSignin = (fname, email, imgurl) => {
         localStorage.setItem('loggedin', 'true');
         setLoggedin('signedin');
         setEmail(email);
         setFname(fname);
+        setImg(imgurl);
+
         localStorage.setItem('name', fname);
         localStorage.setItem('email', email);
-
     }
     const onLogout = () => {
         // localStorage.removeItem('loggedin', '01');
@@ -69,7 +71,7 @@ export function ContextProvider(props) {
         <textContext.Provider value={{
             loggedin,
             onLogin, onLogout, onSignin,
-            email, fname,
+            email, fname, img,
             click, dispatch,
             click2, dispatch2
         }}>
